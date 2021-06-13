@@ -8,18 +8,18 @@
 using namespace std;
 namespace py=pybind11;
 
-LinearRegression::LinearRegression()
-{
+LinearRegression::LinearRegression() {
+    cout << "asd" << endl;
 }
 
-void LinearRegression::fit(Matrix X, Matrix y)
-{
+void LinearRegression::fit(Matrix X, Matrix y) {
+    Matrix A = X.transpose() * X; 
+    Matrix b = X.transpose() * y;
+    _cm_solution = A.colPivHouseholderQr().solve(b);
+    cout << _cm_solution << endl;
 }
 
 
-Matrix LinearRegression::predict(Matrix X)
-{
-    auto ret = MatrixXd::Zero(X.rows(), 1);
-
-    return ret;
+Matrix LinearRegression::predict(Matrix X) {
+    return X * _cm_solution;
 }
