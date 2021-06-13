@@ -1,1 +1,3 @@
 default-*
+/data/train.csv
+/data/test.csv
