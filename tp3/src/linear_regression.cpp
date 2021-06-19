@@ -23,3 +23,7 @@ void LinearRegression::fit(Matrix X, Matrix y) {
 Matrix LinearRegression::predict(Matrix X) {
     return X * _cm_solution;
 }
+
+Matrix LinearRegression::coef() {
+    return _cm_solution;
+}
