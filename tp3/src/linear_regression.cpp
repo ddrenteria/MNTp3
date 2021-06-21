@@ -9,7 +9,6 @@ using namespace std;
 namespace py=pybind11;
 
 LinearRegression::LinearRegression() {
-    cout << "asd" << endl;
 }
 
 void LinearRegression::fit(Matrix X, Matrix y) {
